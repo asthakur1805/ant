@@ -250,7 +250,6 @@ public class XmlPropertyTest extends BuildFileTest {
     /**
      * Debugging method to print the properties in the given hashtable
      */
-	//TODO: Remove the printProperties method because it is never used
     private static void printProperties(Hashtable xmlproperties) {
         Enumeration keyEnum = xmlproperties.keys();
         while (keyEnum.hasMoreElements()) {
