@@ -171,10 +171,9 @@ public class PropertyHelper implements GetProperty {
     //
     //  --------------------------------------------------------
 	
-	//TODO: Make the final fields PREFIX and PREFIX_LEN as static on lines 176 and 177
-    private static final PropertyEvaluator TO_STRING = new PropertyEvaluator() {
-        private final String PREFIX = "toString:";
-        private final int PREFIX_LEN = PREFIX.length();
+	private static final PropertyEvaluator TO_STRING = new PropertyEvaluator() {
+        private static final String PREFIX = "toString:";
+        private static final int PREFIX_LEN = PREFIX.length();
 
         public Object evaluate(String property, PropertyHelper propertyHelper) {
             Object o = null;
