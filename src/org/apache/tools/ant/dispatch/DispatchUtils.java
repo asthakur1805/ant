@@ -34,7 +34,6 @@ public class DispatchUtils {
      * @param task the task to execute.
      * @throws BuildException on error.
      */
-	//TODO: Remove Null check before instanceof on line 47
     public static final void execute(Object task) throws BuildException {
         String methodName = "execute";
         Dispatchable dispatchable = null;
@@ -44,8 +43,7 @@ public class DispatchUtils {
             } else if (task instanceof UnknownElement) {
                 UnknownElement ue = (UnknownElement) task;
                 Object realThing = ue.getRealThing();
-                if (realThing != null
-                    && realThing instanceof Dispatchable
+                if (realThing instanceof Dispatchable
                     && realThing instanceof Task) {
                     dispatchable = (Dispatchable) realThing;
                 }
