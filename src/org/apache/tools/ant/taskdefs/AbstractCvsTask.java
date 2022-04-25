@@ -449,18 +449,17 @@ public abstract class AbstractCvsTask extends Task {
      * @param cmdLine the CVS command line
      * @return a StringBuffer where the password has been removed (if available)
      */
-	// TODO: Use String.indexOf(char) instead of String.indexOf(String) on lines 459-463
     private StringBuffer removeCvsPassword(String cmdLine) {
         StringBuffer stringBuffer = new StringBuffer(cmdLine);
 
         int start = cmdLine.indexOf("-d:");
 
         if (start >= 0) {
-            int stop = cmdLine.indexOf("@", start);
-            int startproto = cmdLine.indexOf(":", start);
-            int startuser = cmdLine.indexOf(":", startproto + 1);
-            int startpass = cmdLine.indexOf(":", startuser + 1);
-            stop = cmdLine.indexOf("@", start);
+            int stop = cmdLine.indexOf('@', start);
+            int startproto = cmdLine.indexOf(':', start);
+            int startuser = cmdLine.indexOf(':', startproto + 1);
+            int startpass = cmdLine.indexOf(':', startuser + 1);
+            stop = cmdLine.indexOf('@', start);
             if (stop >= 0 && startpass > startproto && startpass < stop) {
                 for (int i = startpass + 1; i < stop; i++) {
                     stringBuffer.replace(i, i + 1, "*");
