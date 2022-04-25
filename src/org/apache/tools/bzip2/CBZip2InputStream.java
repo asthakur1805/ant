@@ -322,7 +322,7 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
             reportCRCError();
         }
     }
-    
+
     public void close() throws IOException {
         InputStream inShadow = this.in;
         if (!inShadow.equals(null)) {

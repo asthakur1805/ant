@@ -632,8 +632,7 @@ public final class FixCrLfFilter extends BaseParamFilterReader implements Chaina
             eol = eolString.toCharArray();
             this.fixLast = fixLast;
         }
-		
-		//TODO: Empty if statement at Line 671
+        
         public int read() throws IOException {
             int thisChar = super.read();
 
@@ -668,9 +667,7 @@ public final class FixCrLfFilter extends BaseParamFilterReader implements Chaina
                     int c1 = super.read();
                     int c2 = super.read();
 
-                    if (c1 == '\r' && c2 == '\n') {
-                        // EOL was "\r\r\n"
-                    } else if (c1 == '\r') {
+                    if (c1 == '\r') {
                         // EOL was "\r\r" - handle as two consecutive "\r" and
                         // "\r"
                         numEOL = 2;
