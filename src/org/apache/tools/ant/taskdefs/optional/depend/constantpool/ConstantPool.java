@@ -89,7 +89,6 @@ public class ConstantPool {
      * @return the index into the constant pool at which the entry is
      *      stored.
      */
-	//TODO: Use Integer.valueOf() instead of new Integer at line 108.
     public int addEntry(ConstantPoolEntry entry) {
         int index = entries.size();
 
@@ -105,7 +104,7 @@ public class ConstantPool {
         if (entry instanceof Utf8CPInfo) {
             Utf8CPInfo utf8Info = (Utf8CPInfo) entry;
 
-            utf8Indexes.put(utf8Info.getValue(), new Integer(index));
+            utf8Indexes.put(utf8Info.getValue(), Integer.valueOf(index));
         }
 
         return index;

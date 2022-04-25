@@ -246,7 +246,7 @@ public class XmlPropertyTest extends BuildFileTest {
 
         }
     }
-    
+
     /**
      * Ensure all references loaded by the project are valid.
      */
