@@ -322,13 +322,12 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
             reportCRCError();
         }
     }
-	
-	//TODO: Use equals method in place of not equals operator on line 329 and 331
+    
     public void close() throws IOException {
         InputStream inShadow = this.in;
-        if (inShadow != null) {
+        if (!inShadow.equals(null)) {
             try {
-                if (inShadow != System.in) {
+                if (!inShadow.equals(System.in)) {
                     inShadow.close();
                 }
             } finally {
