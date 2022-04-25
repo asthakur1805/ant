@@ -246,20 +246,7 @@ public class XmlPropertyTest extends BuildFileTest {
 
         }
     }
-
-    /**
-     * Debugging method to print the properties in the given hashtable
-     */
-	//TODO: Remove the printProperties method because it is never used
-    private static void printProperties(Hashtable xmlproperties) {
-        Enumeration keyEnum = xmlproperties.keys();
-        while (keyEnum.hasMoreElements()) {
-            String currentKey = keyEnum.nextElement().toString();
-            System.out.println(currentKey + " = "
-                               + xmlproperties.get(currentKey));
-        }
-    }
-
+    
     /**
      * Ensure all references loaded by the project are valid.
      */
